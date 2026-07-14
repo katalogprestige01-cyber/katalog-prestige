@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_NAME, SITE_URL, LOCALE, LANG, absUrl } from '../data/site.mjs';
+import { author } from '../data/author';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;          // ścieżka kanoniczna; domyślnie bieżąca
+  image?: string;
+  ogType?: string;
+  noindex?: boolean;
+  jsonLd?: object[];       // schema specyficzna dla strony
+}
+const {
+  title, description, path, image = '/img/hero.jpg',
+  ogType = 'website', noindex = false, jsonLd = [],
+} = Astro.props;
+
+// Kanon: jeden URL = canonical = og:url, zawsze z trailing slash (§6).
+const canonical = absUrl(path ?? Astro.url.pathname);
+const ogImage = absUrl(image);
+
+// Schema globalna: WebSite + Organization/Person (§5).
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  url: SITE_URL,
+  inLanguage: 'pl-PL',
+};
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  founder: {
+    '@type': 'Person',
+    name: author.name,
+    jobTitle: author.role,
+    ...(author.sameAs.length ? { sameAs: author.sameAs } : {}),
+  },
+};
+const allSchema = [websiteSchema, orgSchema, ...jsonLd];
+---
+<!doctype html>
+<html lang={LANG}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex ? <meta name="robots" content="noindex, follow" /> : <meta name="robots" content="index, follow" />}
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content={LOCALE} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {allSchema.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

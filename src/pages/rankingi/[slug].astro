@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { activeRankings, getRanking } from '../../data/rankings';
+import { getCategory } from '../../data/categories';
+import { absUrl } from '../../data/site.mjs';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('rankingi', ({ data }) => data.draft !== true);
+  return activeRankings.map((meta) => {
+    const entry = entries.find((e) => e.slug === meta.slug) ?? null;
+    return { params: { slug: meta.slug }, props: { meta, entry } };
+  });
+}
+const { meta, entry } = Astro.props;
+const rk = getRanking(meta.slug)!;
+const relCat = getCategory(rk.relatedCategory);
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Rankingi', href: '/rankingi/' }, { name: rk.title }];
+
+let Content = null;
+let data = null;
+if (entry) { const r = await entry.render(); Content = r.Content; data = entry.data; }
+
+// ItemList schema tylko gdy jest treść
+const jsonLd = entry ? [{
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: data.title,
+  itemListElement: data.items.map((it, i) => ({
+    '@type': 'ListItem', position: i + 1, name: it.name, url: it.affiliateUrl,
+  })),
+}] : [];
+---
+<BaseLayout title={`${rk.title} | Katalog Prestige`} description={rk.description}
+  path={`/rankingi/${rk.slug}/`} jsonLd={jsonLd} noindex={!entry}>
+  <Breadcrumbs items={crumbs} />
+  <section class="section wrap">
+    <p class="eyebrow">Ranking</p>
+    <h1>{rk.title}</h1>
+    <p class="disclosure">Zestawienie zawiera linki afiliacyjne (<code>rel="sponsored nofollow"</code>). Kupując przez nie, wspierasz serwis bez dodatkowych kosztów. Zasady: <a href="/informacja-o-afiliacji/">informacja o afiliacji</a>.</p>
+
+    {entry ? (
+      <>
+        <div class="prose"><Content /></div>
+        <ol style="margin-top:24px;padding-left:0;list-style:none">
+          {data.items.map((it, i) => (
+            <li class="card" style="margin-bottom:16px">
+              <h3>{i + 1}. {it.name}{it.priceApprox ? <span class="muted"> · ~{it.priceApprox}</span> : null}</h3>
+              <p class="muted">{it.description}</p>
+              {it.pros.length > 0 && <p><strong>Plusy:</strong> {it.pros.join(', ')}</p>}
+              {it.cons.length > 0 && <p><strong>Minusy:</strong> {it.cons.join(', ')}</p>}
+              <p><a class="btn" href={it.affiliateUrl} rel="sponsored nofollow" target="_blank">Sprawdź ofertę</a></p>
+            </li>
+          ))}
+        </ol>
+      </>
+    ) : (
+      <div class="empty" style="margin-top:24px">Ten ranking jest w przygotowaniu (strona tymczasowo <code>noindex</code>, poza sitemap). {relCat ? <>Do czasu publikacji zajrzyj do kategorii <a href={`/blog/${relCat.slug}/`}>{relCat.navLabel}</a>.</> : null}</div>
+    )}
+  </section>
+</BaseLayout>

@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { activeCategories, getCategory } from '../../../data/categories';
+import { activeRankings } from '../../../data/rankings';
+
+export async function getStaticPaths() {
+  return activeCategories.map((c) => ({ params: { category: c.slug } }));
+}
+const { category } = Astro.params;
+const cat = getCategory(category)!;
+const posts = (await getCollection('blog', ({ data }) => data.draft !== true && data.category === category))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const related = activeRankings.filter((r) => r.relatedCategory === category);
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Blog', href: '/blog/' }, { name: cat.title }];
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: cat.title,
+  description: cat.description,
+};
+---
+<BaseLayout title={`${cat.title} — poradniki i porównania | Katalog Prestige`}
+  description={cat.description} path={`/blog/${cat.slug}/`} jsonLd={[collectionSchema]}>
+  <section class="hero-banner" style="min-height:52vh">
+    <div class="bg" style={`background-image:url('/img/kat-${cat.slug}.jpg')`}></div>
+    <div class="scrim"></div>
+    <div class="inner">
+      <p class="eyebrow">Kolekcja</p>
+      <h1>{cat.title}</h1>
+      <p>{cat.intro}</p>
+    </div>
+  </section>
+  <Breadcrumbs items={crumbs} />
+  <section class="wrap section" style="padding-top:24px">
+    {related.length > 0 && (
+      <p style="margin-bottom:28px">
+        {related.map((r) => <a class="tag" href={`/rankingi/${r.slug}/`}>★ {r.title}</a>)}
+      </p>
+    )}
+
+    {posts.length === 0 ? (
+      <div class="empty">Wpisy w tej kategorii są w przygotowaniu. Cel: 15–20 wzajemnie zlinkowanych artykułów.</div>
+    ) : (
+      <div class="grid">
+        {posts.map((p) => (
+          <a class="card" href={`/blog/${p.data.category}/${p.slug}/`}>
+            <h3>{p.data.title}</h3>
+            <p class="muted">{p.data.description}</p>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</BaseLayout>

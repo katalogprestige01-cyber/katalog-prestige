@@ -1,0 +1,17 @@
+---
+import { activeCategories } from '../data/categories';
+---
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Katalog Prestige — strona główna">
+      <img class="brand-full" src="/img/logo-full.png" alt="Katalog Prestige — wykończenie wnętrz premium" width="270" height="81" />
+    </a>
+    <nav class="nav" aria-label="Główna">
+      <a href="/blog/">Blog</a>
+      {activeCategories.map((c) => <a href={`/blog/${c.slug}/`}>{c.navLabel}</a>)}
+      <a href="/rankingi/">Rankingi</a>
+      <a href="/o-nas/">O nas</a>
+      <a class="cta" href="/wspolpraca/">Współpraca</a>
+    </nav>
+  </div>
+</header>

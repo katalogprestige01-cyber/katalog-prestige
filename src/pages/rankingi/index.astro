@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { activeRankings } from '../../data/rankings';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Rankingi' }];
+---
+<BaseLayout title="Rankingi TOP — najlepsze materiały wykończeniowe | Katalog Prestige"
+  description="Rankingi TOP materiałów wykończeniowych premium: płytki wielkoformatowe, panele SPC, baterie łazienkowe, blaty kamienne. Wybór ekspercki."
+  path="/rankingi/">
+  <Breadcrumbs items={crumbs} />
+  <section class="section wrap">
+    <p class="eyebrow">Rankingi</p>
+    <h1>Rankingi TOP</h1>
+    <p class="lead">Nasze zestawienia najlepszych produktów w kategorii. Część linków to linki afiliacyjne — <a href="/informacja-o-afiliacji/">zobacz zasady</a>.</p>
+    <div class="grid" style="margin-top:24px">
+      {activeRankings.map((r) => (
+        <a class="card" href={`/rankingi/${r.slug}/`} style="text-decoration:none;color:inherit">
+          <h3>{r.title}</h3>
+          <p class="muted">{r.description}</p>
+          <span class="tag">Zobacz ranking →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

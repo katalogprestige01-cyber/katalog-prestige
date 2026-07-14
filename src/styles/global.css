@@ -1,0 +1,174 @@
+/* ===== Katalog Prestige — motyw "light glamour" (ivory + trawertyn + mosiądz) ===== */
+:root{
+  --bg:#f6f2ec;         /* ciepła kość słoniowa */
+  --ink:#1c1a17;        /* prawie czerń, ciepła */
+  --muted:#726a5f;
+  --line:#e4ddd1;
+  --gold:#b08d57;       /* szczotkowany mosiądz */
+  --gold-deep:#8a6d3b;
+  --dark:#171310;       /* espresso — ciemne sekcje "na bogato" */
+  --dark-2:#221b15;
+  --card:#fffdf9;
+  --max:1200px; --radius:4px;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  line-height:1.7;font-size:17px;font-weight:300;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+a{color:var(--gold-deep);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--serif);line-height:1.12;font-weight:600;letter-spacing:.3px;color:var(--ink)}
+h1{font-size:clamp(2.4rem,5vw,4rem);margin:.1em 0 .3em;font-weight:700}
+h2{font-size:clamp(1.8rem,3vw,2.6rem);margin:0 0 .5em}
+h3{font-size:1.35rem;font-weight:600}
+img{max-width:100%;height:auto;display:block}
+.eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.32em;
+  font-size:.72rem;color:var(--gold);font-weight:500}
+.lead{font-size:1.2rem;color:var(--muted);max-width:62ch;font-weight:300}
+
+/* ---------- Header (ciemny, złoty Cinzel, jedna linia) ---------- */
+.site-header{position:sticky;top:0;z-index:20;background:rgba(20,16,12,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid rgba(176,141,87,.3)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  min-height:108px;flex-wrap:nowrap}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;flex-shrink:0}
+.brand-mark{height:58px;width:auto;display:block;flex-shrink:0}
+.brand-full{height:82px;width:auto;display:block}
+.brand-text{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.55rem;font-weight:700;
+  letter-spacing:.04em;color:#efe6d0;line-height:1;white-space:nowrap}
+.brand-text small{display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.3em;
+  text-transform:uppercase;color:#c9a24b;font-weight:400;margin-top:7px}
+.nav{display:flex;gap:17px;flex-wrap:nowrap;align-items:center;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.11em;font-weight:400;white-space:nowrap}
+.nav a{text-decoration:none;color:#efe6d0;position:relative;padding-bottom:3px}
+.nav a:hover{color:#e7c893}
+.nav a:not(.cta):after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+  background:#c9a24b;transition:width .25s}
+.nav a:not(.cta):hover:after{width:100%}
+.nav .cta{border:1px solid #b08d57;border-radius:999px;padding:9px 18px;color:#e7d3a8}
+.nav .cta:hover{background:#b08d57;color:#14100c}
+@media (max-width:1040px){
+  .site-header .wrap{flex-wrap:wrap;gap:12px}
+  .nav{flex-wrap:wrap;gap:14px;width:100%}
+}
+
+/* ---------- Hero banner (pełnoekranowy, ze zdjęciem) ---------- */
+.hero-banner{position:relative;min-height:82vh;display:flex;align-items:center;
+  background:var(--dark);overflow:hidden}
+.hero-banner .bg{position:absolute;inset:0;background-size:cover;background-position:center;
+  transform:scale(1.03)}
+.hero-banner .scrim{position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(15,12,9,.72) 0%,rgba(15,12,9,.45) 42%,rgba(15,12,9,.1) 100%),
+             linear-gradient(0deg,rgba(15,12,9,.55),rgba(15,12,9,0) 45%)}
+.hero-banner .inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;
+  padding:0 28px;width:100%;color:#f4ede0}
+.hero-banner h1{color:#fbf7ef;max-width:16ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero-banner .eyebrow{color:var(--gold)}
+.hero-banner p{color:#e7ddcc;max-width:52ch;font-size:1.2rem}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}
+
+/* ---------- Przyciski ---------- */
+.btn{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;
+  padding:14px 30px;border-radius:999px;font-size:.8rem;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:500;transition:.25s;border:1px solid var(--gold)}
+.btn:hover{background:var(--gold-deep);border-color:var(--gold-deep)}
+.btn.ghost{background:transparent;color:#fbf7ef;border-color:rgba(251,247,239,.6)}
+.btn.ghost:hover{background:#fbf7ef;color:var(--ink)}
+.btn.dark{background:var(--ink);border-color:var(--ink)}
+.btn.dark:hover{background:#000}
+
+/* ---------- Sekcje ---------- */
+.section{padding:84px 0}
+.section-head{margin-bottom:40px;text-align:center}
+.section-head .eyebrow{display:block;margin-bottom:10px}
+.section-head .rule{width:54px;height:1px;background:var(--gold);margin:18px auto 0}
+
+/* ---------- Kafle kolekcji (banery ze zdjęciami) ---------- */
+.tiles{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.tile{position:relative;display:block;aspect-ratio:3/4;border-radius:var(--radius);
+  overflow:hidden;text-decoration:none;box-shadow:0 18px 40px -24px rgba(40,30,15,.5)}
+.tile .bg{position:absolute;inset:0;background-size:cover;background-position:center;
+  transition:transform .6s ease}
+.tile:hover .bg{transform:scale(1.07)}
+.tile .ov{position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(15,11,7,.72) 0%,rgba(15,11,7,.15) 55%,rgba(15,11,7,.05) 100%)}
+.tile .txt{position:absolute;left:0;right:0;bottom:0;padding:24px;z-index:2;color:#fbf7ef}
+.tile .txt h3{color:#fbf7ef;margin:0 0 4px;font-size:1.5rem}
+.tile .txt span{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  opacity:0;transform:translateY(6px);transition:.3s}
+.tile:hover .txt span{opacity:1;transform:none}
+
+/* ---------- Ciemna sekcja "na bogato" ---------- */
+.band{background:var(--dark);color:#ece3d4;position:relative}
+.band h2{color:#fbf7ef}
+.band .eyebrow{color:var(--gold)}
+.band .lead{color:#cdbfa8}
+.pillars{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:46px}
+.pillar{padding-top:22px;border-top:1px solid rgba(176,141,87,.4)}
+.pillar h3{color:#fbf7ef;font-size:1.3rem;margin:0 0 8px}
+.pillar p{color:#c3b7a3;font-size:.98rem;margin:0}
+
+/* ---------- Karty (rankingi / wpisy) ---------- */
+.grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;display:flex;flex-direction:column;gap:10px;transition:.25s;
+  box-shadow:0 14px 34px -28px rgba(40,30,15,.6)}
+a.card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 22px 44px -26px rgba(40,30,15,.55)}
+.card h3{margin:0}
+.card .muted{color:var(--muted);font-size:.96rem;margin:0}
+.tag{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--gold);border-radius:999px;padding:5px 14px;
+  color:var(--gold-deep);text-decoration:none;transition:.2s}
+a.tag:hover{background:var(--gold);color:#fff}
+.card .star{color:var(--gold)}
+.empty{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--radius);
+  padding:26px;color:var(--muted);background:#fffdf9}
+
+/* ---------- Breadcrumbs ---------- */
+.crumbs{font-size:.76rem;color:var(--muted);padding:18px 0;letter-spacing:.06em;text-transform:uppercase}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--gold-deep)}
+
+/* ---------- Artykuł ---------- */
+.prose{max-width:74ch;font-size:1.12rem}
+.prose h2{margin:1.7em 0 .4em}
+.prose p,.prose ul,.prose ol,.prose table{margin:1.1em 0}
+.prose table{border-collapse:collapse;width:100%;font-size:.98rem}
+.prose th,.prose td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+.prose th{background:#f0e9dc;font-family:var(--sans);font-weight:500}
+.prose blockquote{border-left:3px solid var(--gold);margin:1.4em 0;padding:.2em 1.2em;color:var(--muted)}
+.article-hero{position:relative;height:46vh;min-height:320px;background:var(--dark);overflow:hidden}
+.article-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.article-hero .scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,11,7,.7),rgba(15,11,7,.15))}
+.disclosure{background:#f0e9dc;border-left:3px solid var(--gold);border-radius:var(--radius);
+  padding:12px 18px;font-size:.9rem;color:var(--muted)}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--dark);color:#c3b7a3;margin-top:0;padding:60px 0 30px;font-size:.92rem}
+.site-footer strong{color:#fbf7ef;display:block;margin-bottom:12px;font-family:var(--serif);
+  font-size:1.05rem;font-weight:600;letter-spacing:.4px}
+.site-footer .cols{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.site-footer a{color:#c3b7a3;text-decoration:none;display:block;padding:4px 0}
+.site-footer a:hover{color:var(--gold)}
+.site-footer .legal{margin-top:34px;padding-top:20px;border-top:1px solid rgba(176,141,87,.25);
+  font-size:.82rem;color:#9a8f7d}
+
+/* ---------- Ruch (Ken Burns + wejście tekstu) ---------- */
+@keyframes kp-kenburns{0%{transform:scale(1.05)}100%{transform:scale(1.16) translate(-1.6%,-1.2%)}}
+@keyframes kp-rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero-banner .bg{animation:kp-kenburns 24s ease-in-out infinite alternate}
+.article-hero .bg{animation:kp-kenburns 30s ease-in-out infinite alternate}
+.hero-banner .inner .eyebrow{animation:kp-rise .8s .05s both cubic-bezier(.2,.7,.2,1)}
+.hero-banner .inner h1{animation:kp-rise .9s .16s both cubic-bezier(.2,.7,.2,1)}
+.hero-banner .inner p{animation:kp-rise .9s .30s both cubic-bezier(.2,.7,.2,1)}
+.hero-banner .hero-actions{animation:kp-rise .9s .44s both cubic-bezier(.2,.7,.2,1)}
+.tiles .tile{opacity:0;animation:kp-rise .7s both ease-out}
+.tiles .tile:nth-child(1){animation-delay:.05s}
+.tiles .tile:nth-child(2){animation-delay:.15s}
+.tiles .tile:nth-child(3){animation-delay:.25s}
+.tiles .tile:nth-child(4){animation-delay:.35s}
+@media (prefers-reduced-motion: reduce){
+  .hero-banner .bg,.article-hero .bg,.hero-banner .inner *,.hero-actions,.tiles .tile{animation:none!important;opacity:1!important}
+}
