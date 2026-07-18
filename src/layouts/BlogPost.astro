@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { author as defaultAuthor } from '../data/author';
 import { getCategory } from '../data/categories';
-import { absUrl } from '../data/site.mjs';
+import { absUrl, SITE_NAME } from '../data/site.mjs';
 
 const { entry } = Astro.props;
 const d = entry.data;
@@ -18,6 +18,7 @@ const crumbs = [
   { name: d.title },
 ];
 
+// Schema artykułu (§5). Wydawca + język + obrazek = pełniejsze rich results i lepsze parsowanie przez AI.
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -25,14 +26,33 @@ const articleSchema = {
   description: d.description,
   datePublished: d.pubDate.toISOString(),
   dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
-  ...(d.image ? { image: absUrl(d.image) } : {}),
+  inLanguage: 'pl-PL',
+  image: absUrl(heroImg),
   author: { '@type': 'Person', name: defaultAuthor.name, jobTitle: defaultAuthor.role },
-  mainEntityOfPage: absUrl(path),
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    logo: { '@type': 'ImageObject', url: absUrl('/favicon.png') },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': absUrl(path) },
 };
+
+// Okruszki nawigacji jako dane strukturalne — to samo, co widać wizualnie, ale czytelne dla Google.
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: absUrl(c.href ?? path),
+  })),
+};
+
 const fmt = (dt) => new Intl.DateTimeFormat('pl-PL', { dateStyle: 'long' }).format(dt);
 ---
 <BaseLayout title={d.title} description={d.description} path={path}
-  image={d.image} ogType="article" jsonLd={[articleSchema]}>
+  image={d.image} ogType="article" jsonLd={[articleSchema, breadcrumbSchema]}>
   <section class="article-hero">
     <div class="bg" style={`background-image:url('${heroImg}')`}></div>
     <div class="scrim"></div>
