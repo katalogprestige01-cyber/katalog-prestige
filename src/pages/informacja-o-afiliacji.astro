@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Informacja o afiliacji' }];
+---
+<BaseLayout title="Informacja o afiliacji | Katalog Prestige"
+  description="Jak działa afiliacja w Katalogu Prestige. Część linków to linki afiliacyjne — wyjaśniamy zasady i wpływ na rekomendacje."
+  path="/informacja-o-afiliacji/">
+  <Breadcrumbs items={crumbs} />
+  <section class="section wrap prose">
+    <p class="eyebrow">Transparentność</p>
+    <h1>Informacja o afiliacji</h1>
+    <p>Część linków w naszych artykułach i rankingach to <strong>linki afiliacyjne</strong>. Jeśli klikniesz taki link i dokonasz zakupu, możemy otrzymać niewielką prowizję — <strong>bez dodatkowych kosztów dla Ciebie</strong>.</p>
+    <p>Prowizje afiliacyjne pomagają utrzymać serwis i tworzyć bezpłatne treści. Nie wpływają na naszą ocenę produktów — rekomendujemy to, co uznajemy za wartościowe.</p>
+    <p>Linki afiliacyjne oznaczamy technicznie atrybutem <code>rel="sponsored nofollow"</code>.</p>
+    <div class="empty">Szablon — dostosuj do konkretnych programów afiliacyjnych, z których korzystasz (np. sieci, marki).</div>
+  </section>
+</BaseLayout>

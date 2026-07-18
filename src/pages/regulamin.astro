@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Regulamin' }];
+---
+<BaseLayout title="Regulamin | Katalog Prestige"
+  description="Regulamin korzystania z serwisu Katalog Prestige — zasady, prawa autorskie, odpowiedzialność."
+  path="/regulamin/" noindex={true}>
+  <Breadcrumbs items={crumbs} />
+  <section class="section wrap prose">
+    <p class="eyebrow">Zasady</p>
+    <h1>Regulamin</h1>
+
+    <h2>1. Postanowienia ogólne</h2>
+    <p>Niniejszy regulamin określa zasady korzystania z serwisu internetowego Katalog Prestige, dostępnego pod adresem katalog-prestige.pl. Serwis ma charakter informacyjny i poradnikowy w tematyce wykończenia i wyposażenia wnętrz.</p>
+
+    <h2>2. Zasady korzystania</h2>
+    <p>Korzystanie z serwisu jest bezpłatne. Użytkownik zobowiązuje się do korzystania ze strony zgodnie z prawem i dobrymi obyczajami oraz do niepodejmowania działań zakłócających jej działanie.</p>
+
+    <h2>3. Prawa autorskie</h2>
+    <p>Treści publikowane w serwisie (teksty, grafiki, logo) podlegają ochronie prawnej i stanowią własność wydawcy lub są wykorzystywane na podstawie odpowiednich licencji. Kopiowanie i rozpowszechnianie bez zgody jest zabronione.</p>
+
+    <h2>4. Linki afiliacyjne</h2>
+    <p>Serwis zawiera linki afiliacyjne. Zasady ich stosowania opisujemy w osobnej <a href="/informacja-o-afiliacji/">informacji o afiliacji</a>.</p>
+
+    <h2>5. Odpowiedzialność</h2>
+    <p>Treści mają charakter informacyjny i nie stanowią porady zawodowej (np. budowlanej czy prawnej). Wydawca dokłada starań, by informacje były rzetelne i aktualne, jednak nie ponosi odpowiedzialności za decyzje podjęte na ich podstawie.</p>
+
+    <h2>6. Kontakt</h2>
+    <p>W sprawach dotyczących serwisu skorzystaj ze strony <a href="/kontakt/">Kontakt</a>.</p>
+
+    <div class="empty">Szablon — przed publicznym startem uzupełnij dane wydawcy i skonsultuj z prawnikiem. Strona ustawiona jako <code>noindex</code>.</div>
+  </section>
+</BaseLayout>

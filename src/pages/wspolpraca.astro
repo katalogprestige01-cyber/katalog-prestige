@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Współpraca' }];
+---
+<BaseLayout title="Współpraca — oferta dla marek i producentów | Katalog Prestige"
+  description="Współpraca reklamowa i contentowa dla marek z branży wykończenia wnętrz premium. Artykuły sponsorowane, testy, obecność w rankingach."
+  path="/wspolpraca/">
+  <Breadcrumbs items={crumbs} />
+  <section class="section wrap prose">
+    <p class="eyebrow">Współpraca</p>
+    <h1>Współpraca dla marek i producentów</h1>
+    <p class="lead">Docieramy do osób planujących wykończenie wnętrz w standardzie premium.</p>
+    <p>Interesuje Cię obecność Twoich produktów w naszych poradnikach i rankingach? Napisz — dobierzemy format współpracy.</p>
+    <ul>
+      <li>Artykuły eksperckie i testy produktów</li>
+      <li>Obecność w rankingach TOP</li>
+      <li>Materiały sponsorowane (oznaczane zgodnie z prawem)</li>
+    </ul>
+    <p><a class="btn" href="/kontakt/">Napisz do nas</a></p>
+    <div class="empty">Szablon — uzupełnij ofertę, cennik/warunki i dane kontaktowe.</div>
+  </section>
+</BaseLayout>

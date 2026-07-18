@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { activeCategories } from '../data/categories';
+---
+<BaseLayout title="404 — nie znaleziono strony | Katalog Prestige"
+  description="Strona nie istnieje. Wróć na stronę główną lub przejdź do bloga."
+  path="/404/" noindex={true}>
+  <section class="section wrap prose" style="text-align:center">
+    <p class="eyebrow">Błąd 404</p>
+    <h1>Nie znaleźliśmy tej strony</h1>
+    <p class="lead" style="margin:0 auto">Strona mogła zostać przeniesiona lub nie istnieje.</p>
+    <p style="margin-top:24px"><a class="btn" href="/">Strona główna</a> &nbsp; <a class="btn" href="/blog/" style="background:#5c4a28">Blog</a></p>
+    <p style="margin-top:24px">{activeCategories.map((c) => <a class="tag" href={`/blog/${c.slug}/`}>{c.navLabel}</a>)}</p>
+  </section>
+</BaseLayout>

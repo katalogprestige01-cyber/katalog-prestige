@@ -1,0 +1,30 @@
+---
+import { SITE_NAME } from '../data/site.mjs';
+import { activeCategories } from '../data/categories';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <strong>Kategorie</strong>
+        {activeCategories.map((c) => <a href={`/blog/${c.slug}/`}>{c.navLabel}</a>)}
+      </div>
+      <div>
+        <strong>Serwis</strong>
+        <a href="/blog/">Blog</a>
+        <a href="/rankingi/">Rankingi</a>
+        <a href="/o-nas/">O nas</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/wspolpraca/">Współpraca</a>
+      </div>
+      <div>
+        <strong>Informacje</strong>
+        <a href="/informacja-o-afiliacji/">Informacja o afiliacji</a>
+        <a href="/polityka-prywatnosci/">Polityka prywatności</a>
+        <a href="/regulamin/">Regulamin</a>
+      </div>
+    </div>
+    <div class="legal">© {year} {SITE_NAME}. Materiały mają charakter informacyjny. Niektóre linki są linkami afiliacyjnymi.</div>
+  </div>
+</footer>

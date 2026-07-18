@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { author } from '../data/author';
+import { absUrl } from '../data/site.mjs';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'O nas' }];
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: author.name,
+  jobTitle: author.role,
+  description: author.bioLong,
+  ...(author.sameAs.length ? { sameAs: author.sameAs } : {}),
+  worksFor: { '@type': 'Organization', name: 'Katalog Prestige', url: absUrl('/') },
+};
+---
+<BaseLayout title="O nas — kto tworzy Katalog Prestige"
+  description="Poznaj autora Katalogu Prestige — praktyka projektowania wnętrz premium i doboru materiałów wykończeniowych."
+  path="/o-nas/" jsonLd={[personSchema]}>
+  <Breadcrumbs items={crumbs} />
+  <section class="section wrap prose">
+    <p class="eyebrow">O nas</p>
+    <h1>Kto tworzy Katalog Prestige</h1>
+    <h2>{author.name}</h2>
+    <p class="lead">{author.role}</p>
+    <p>{author.bioLong}</p>
+    <h3>Doświadczenie</h3>
+    <ul>
+      {author.credentials.map((c) => <li>{c}</li>)}
+    </ul>
+    <p class="muted">Kontakt: <a href="/kontakt/">strona kontaktu</a>.</p>
+  </section>
+</BaseLayout>

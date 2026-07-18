@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Polityka prywatności' }];
+---
+<BaseLayout title="Polityka prywatności | Katalog Prestige"
+  description="Zasady przetwarzania danych osobowych i wykorzystania plików cookies w serwisie Katalog Prestige."
+  path="/polityka-prywatnosci/" noindex={true}>
+  <Breadcrumbs items={crumbs} />
+  <section class="section wrap prose">
+    <p class="eyebrow">RODO</p>
+    <h1>Polityka prywatności</h1>
+    <p class="lead">Dbamy o Twoją prywatność. Poniżej wyjaśniamy, jakie dane zbieramy i w jakim celu.</p>
+
+    <h2>1. Administrator danych</h2>
+    <p>Administratorem danych osobowych jest wydawca serwisu Katalog Prestige. W sprawach prywatności możesz napisać na adres podany na stronie <a href="/kontakt/">Kontakt</a>. [Uzupełnij pełne dane administratora: nazwa/firma, adres, NIP.]</p>
+
+    <h2>2. Jakie dane zbieramy</h2>
+    <p>Zbieramy wyłącznie dane niezbędne do działania serwisu: dane przekazane dobrowolnie (np. w wiadomości e-mail lub formularzu kontaktowym) oraz dane techniczne gromadzone automatycznie przez narzędzia analityczne (np. adres IP, typ urządzenia, sposób korzystania ze strony).</p>
+
+    <h2>3. Cele przetwarzania</h2>
+    <p>Dane przetwarzamy w celu: odpowiedzi na wiadomości i zapytania, prowadzenia statystyk oglądalności i poprawy jakości treści, a także obsługi ewentualnej współpracy reklamowej i afiliacyjnej.</p>
+
+    <h2>4. Pliki cookies</h2>
+    <p>Serwis wykorzystuje pliki cookies (własne i podmiotów trzecich) m.in. do celów analitycznych oraz w ramach programów afiliacyjnych. Możesz zarządzać cookies w ustawieniach swojej przeglądarki. Ograniczenie cookies może wpłynąć na działanie niektórych funkcji strony.</p>
+
+    <h2>5. Odbiorcy danych</h2>
+    <p>Dane mogą być powierzane dostawcom usług, z których korzystamy (np. hosting, narzędzia analityczne, sieci afiliacyjne), wyłącznie w zakresie niezbędnym do świadczenia tych usług.</p>
+
+    <h2>6. Twoje prawa</h2>
+    <p>Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także prawo wniesienia sprzeciwu i skargi do Prezesa Urzędu Ochrony Danych Osobowych.</p>
+
+    <div class="empty">Szablon informacyjny — przed publicznym startem uzupełnij dane administratora i skonsultuj treść z prawnikiem. Strona ustawiona jako <code>noindex</code>.</div>
+  </section>
+</BaseLayout>

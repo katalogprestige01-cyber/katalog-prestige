@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { activeCategories, getCategory } from '../data/categories';
+import { activeRankings } from '../data/rankings';
+import { author } from '../data/author';
+import { SITE_NAME, SITE_TAGLINE } from '../data/site.mjs';
+
+const posts = (await getCollection('blog', ({ data }) => data.draft !== true))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+<BaseLayout
+  title={`${SITE_NAME} — ${SITE_TAGLINE}`}
+  description="Ekspercki katalog wykończenia wnętrz premium: kamień naturalny, wielkoformaty, armatura designerska. Poradniki, porównania i rankingi TOP."
+  path="/">
+
+  <!-- HERO BANNER -->
+  <section class="hero-banner">
+    <div class="bg" style="background-image:url('/img/hero.jpg')"></div>
+    <div class="scrim"></div>
+    <div class="inner">
+      <p class="eyebrow">Wykończenie wnętrz premium</p>
+      <h1>Materiały, które nadają wnętrzu klasę</h1>
+      <p>Kamień naturalny, wielkoformaty, armatura designerska. Konkret i inspiracja — bez marketingowego lukru. Wybieramy to, co naprawdę warto.</p>
+      <div class="hero-actions">
+        <a class="btn" href="/blog/">Przeglądaj poradniki</a>
+        <a class="btn ghost" href="/rankingi/">Rankingi TOP</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KOLEKCJE / KATEGORIE jako banery ze zdjęciami -->
+  <section class="section wrap">
+    <div class="section-head">
+      <span class="eyebrow">Kolekcje</span>
+      <h2>Wybierz materiał</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="tiles">
+      {activeCategories.map((c) => (
+        <a class="tile" href={`/blog/${c.slug}/`}>
+          <div class="bg" style={`background-image:url('/img/kat-${c.slug}.jpg')`}></div>
+          <div class="ov"></div>
+          <div class="txt">
+            <h3>{c.title}</h3>
+            <span>Zobacz →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CIEMNA SEKCJA "NA BOGATO" -->
+  <section class="band">
+    <div class="wrap section">
+      <div class="section-head">
+        <span class="eyebrow">Dlaczego prestige</span>
+        <h2>Detale, które widać i czuć</h2>
+        <div class="rule"></div>
+      </div>
+      <p class="lead" style="margin:0 auto;text-align:center">Nie sprzedajemy — doradzamy. Każdy materiał oceniamy tak, jakbyśmy mieli go położyć u siebie: pod kątem trwałości, montażu i tego, jak wygląda po latach.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Kamień naturalny</h3>
+          <p>Marmur, trawertyn, granit i konglomeraty. Materiały, które nadają wnętrzu ciężar prawdziwego luksusu.</p>
+        </div>
+        <div class="pillar">
+          <h3>Wielkoformaty</h3>
+          <p>Bezfugowe tafle gresu i spieków. Spokój, którego małe płytki nigdy nie dadzą.</p>
+        </div>
+        <div class="pillar">
+          <h3>Armatura designerska</h3>
+          <p>Baterie, ceramika i wanny wolnostojące, które zamieniają łazienkę w prywatne spa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANKINGI -->
+  <section class="section wrap">
+    <div class="section-head">
+      <span class="eyebrow">Wybór ekspercki</span>
+      <h2>Rankingi TOP</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      {activeRankings.map((r) => (
+        <a class="card" href={`/rankingi/${r.slug}/`}>
+          <span class="star">★ Ranking</span>
+          <h3>{r.title}</h3>
+          <p class="muted">{r.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- NAJNOWSZE WPISY -->
+  {posts.length > 0 && (
+    <section class="section wrap" style="padding-top:0">
+      <div class="section-head">
+        <span class="eyebrow">Z bloga</span>
+        <h2>Najnowsze poradniki</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="grid">
+        {posts.map((p) => (
+          <a class="card" href={`/blog/${p.data.category}/${p.slug}/`}>
+            <span class="tag">{getCategory(p.data.category)?.navLabel}</span>
+            <h3>{p.data.title}</h3>
+            <p class="muted">{p.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- CTA WSPÓŁPRACA -->
+  <section class="band">
+    <div class="wrap section" style="text-align:center">
+      <span class="eyebrow">Dla marek i producentów</span>
+      <h2 style="margin:.3em 0">Zaprezentuj swój produkt w dobrym towarzystwie</h2>
+      <p class="lead" style="margin:0 auto 28px">Artykuły eksperckie, testy i obecność w rankingach — w serwisie dla osób planujących wnętrze premium.</p>
+      <a class="btn" href="/wspolpraca/">Nawiąż współpracę</a>
+    </div>
+  </section>
+</BaseLayout>
