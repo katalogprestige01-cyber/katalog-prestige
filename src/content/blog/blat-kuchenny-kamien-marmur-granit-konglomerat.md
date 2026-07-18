@@ -2,6 +2,7 @@
 title: "Blat kuchenny z kamienia: marmur, granit czy konglomerat?"
 description: "Marmur plami się od cytryny, granit jest wieczny, a konglomerat udaje jedno i drugie. Podpowiadamy, który kamień wybrać do kuchni i dlaczego."
 pubDate: 2026-07-12
+updatedDate: 2026-07-18
 category: "kamien-naturalny"
 tags: ["kuchnia", "klasyczny", "glamour"]
 author: "default"
@@ -58,7 +59,7 @@ Haczyk: konglomerat nie lubi wysokiej temperatury. Gorący garnek prosto z palni
 
 ## A gdzie w tym wszystkim spiek?
 
-Jeśli chcesz wygląd marmuru, odporność granitu i możliwość postawienia gorącego garnka bez stresu — spójrz na spiek kwarcowy. Jest droższy i wymaga dobrej ekipy do montażu, ale pod względem odporności bije całą trójkę. Rozpisaliśmy to szerzej w [poradnikach o kamieniu i blatach](/blog/kamien-naturalny/).
+Jeśli chcesz wygląd marmuru, odporność granitu i możliwość postawienia gorącego garnka bez stresu — spójrz na spiek kwarcowy. Jest droższy i wymaga dobrej ekipy do montażu, ale pod względem odporności bije całą trójkę. Jak spiek wypada w bezpośrednim starciu ze zwykłym gresem, rozłożyliśmy w [porównaniu gres vs spiek](/blog/plytki/gres-czy-spiek-kwarcowy/). Więcej o samym kamieniu i blatach znajdziesz w [poradnikach o kamieniu naturalnym](/blog/kamien-naturalny/).
 
 ## Mój wybór, gdybym miał zdecydować za Ciebie
 

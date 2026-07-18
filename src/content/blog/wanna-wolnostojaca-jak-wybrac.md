@@ -38,4 +38,4 @@ O samym wyborze baterii pisałem w tekście [bateria podtynkowa czy natynkowa](/
 
 Zanim kupisz, wejdź do wanny w salonie (serio, poproś). Sprawdź długość — czy podeprzesz plecy i wyciągniesz nogi. Piękna wanna, w której nie da się wygodnie leżeć, to najdroższa dekoracja świata.
 
-Kompletujesz łazienkę premium? Zajrzyj do [poradników o armaturze i ceramice](/blog/armatura-i-ceramika/) oraz do [rankingu baterii łazienkowych premium](/rankingi/baterie-lazienkowe-premium/).
+Kompletujesz łazienkę premium? Na ściany i podłogę wokół wanny sprawdź, [jak dobrać płytki wielkoformatowe](/blog/plytki/plytki-wielkoformatowe-jak-wybrac/), a po armaturę zajrzyj do [poradników o armaturze i ceramice](/blog/armatura-i-ceramika/) oraz do [rankingu baterii łazienkowych premium](/rankingi/baterie-lazienkowe-premium/).

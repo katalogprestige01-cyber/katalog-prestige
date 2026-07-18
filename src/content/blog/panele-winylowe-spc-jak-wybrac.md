@@ -2,6 +2,7 @@
 title: "Panele winylowe SPC — na co zwrócić uwagę przy wyborze"
 description: "Ciche, wodoodporne i ciepłe w dotyku — panele SPC podbijają domy. Sprawdź, na jakie parametry patrzeć, żeby nie przepłacić za marketing."
 pubDate: 2026-07-13
+updatedDate: 2026-07-18
 category: "podlogi"
 tags: ["salon", "kuchnia", "nowoczesny"]
 author: "default"
@@ -56,4 +57,4 @@ Weź próbkę do ręki i spróbuj ją zgiąć. Dobry SPC jest sztywny — ledwo 
 
 Ustal minimum: warstwa użytkowa od 0,3 mm (w kuchni 0,55), klasa 33, deska 5–6 mm z podkładem i V-fazą. W tym zbiorze wybieraj dekor sercem — reszta już Cię nie zawiedzie.
 
-Konkretne modele z dobrymi parametrami zestawiliśmy tutaj: [najlepsze panele winylowe SPC](/rankingi/panele-winylowe-spc/). A po więcej o podłogach — deska warstwowa, mikrocement, żywica — zajrzyj do [naszych poradników o podłogach](/blog/podlogi/).
+Konkretne modele z dobrymi parametrami zestawiliśmy tutaj: [najlepsze panele winylowe SPC](/rankingi/panele-winylowe-spc/). A po więcej o podłogach — deska warstwowa, mikrocement, żywica — zajrzyj do [naszych poradników o podłogach](/blog/podlogi/). Jeśli za to podłogę planujesz do mokrej łazienki, rozważ też płytki — jak dobrać wielki format, opisaliśmy w [poradniku o płytkach wielkoformatowych](/blog/plytki/plytki-wielkoformatowe-jak-wybrac/).

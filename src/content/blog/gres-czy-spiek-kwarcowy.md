@@ -2,6 +2,7 @@
 title: "Gres czy spiek kwarcowy? Który materiał wybrać i gdzie"
 description: "Gres jest tańszy i uniwersalny, spiek twardszy i cieńszy. Sprawdź, który wybrać na podłogę, ścianę i blat — bez marketingowego szumu."
 pubDate: 2026-07-15
+updatedDate: 2026-07-18
 category: "plytki"
 tags: ["salon", "kuchnia", "nowoczesny"]
 author: "Ewa Sadowska"
@@ -38,6 +39,6 @@ Orientacyjnie: dobry gres to ok. 100–200 zł/m², spiek zaczyna się realnie o
 
 ## Mój prosty test wyboru
 
-Zadaj sobie jedno pytanie: czy w tym miejscu materiał będzie narażony na wysoką temperaturę albo bardzo duże obciążenie (blat, front kominka, wielka bezfugowa ściana)? Jeśli tak — spiek. Jeśli to zwykła podłoga czy ściana w łazience — gres w zupełności wystarczy, a różnicę w cenie wydasz na coś, co realnie widać.
+Zadaj sobie jedno pytanie: czy w tym miejscu materiał będzie narażony na wysoką temperaturę albo bardzo duże obciążenie (blat, front kominka, wielka bezfugowa ściana)? Jeśli tak — spiek. Jeśli to zwykła podłoga czy ściana w łazience — gres w zupełności wystarczy, a różnicę w cenie wydasz na coś, co realnie widać. A jeśli spiek rozważasz akurat na blat kuchenny, zestawiliśmy go z kamieniem w [poradniku o blatach kuchennych](/blog/kamien-naturalny/blat-kuchenny-kamien-marmur-granit-konglomerat/).
 
 Więcej o samych wielkoformatach rozpisałem w tekście [jak wybrać płytki wielkoformatowe](/blog/plytki/plytki-wielkoformatowe-jak-wybrac/), a konkretne kolekcje znajdziesz w [rankingu płytek wielkoformatowych](/rankingi/plytki-wielkoformatowe/). Po więcej okładzin zajrzyj do [poradników o płytkach](/blog/plytki/).

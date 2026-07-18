@@ -2,6 +2,7 @@
 title: "Płytki wielkoformatowe — jak wybrać i gdzie się sprawdzają"
 description: "Wielki format kusi bezfugową taflą, ale bywa kapryśny. Sprawdź, jaki rozmiar i grubość wybrać, gdzie płyta się obroni, a gdzie narobi kłopotu."
 pubDate: 2026-07-11
+updatedDate: 2026-07-18
 category: "plytki"
 tags: ["salon", "lazienka", "nowoczesny"]
 author: "default"
@@ -20,7 +21,7 @@ Tylko że wielkoformat to materiał z charakterem. Potrafi zrobić z pokoju sesj
 
 Umownie mówimy o wielkim formacie od 60×120 w górę. Ale prawdziwa liga zaczyna się wyżej: 120×120, 120×240, 120×280, a spieki kwarcowe schodzą nawet do grubości 6 mm przy powierzchni 160×320. To już nie płytka. To płyta, którą kładzie się we dwóch, na przyssawki.
 
-Materiałowo najczęściej trafisz na dwie rzeczy: **gres porcelanowy** i **spiek kwarcowy**. Gres jest tańszy, uniwersalny, świetnie imituje marmur czy beton. Spiek jest twardszy, cieńszy, znosi wysoką temperaturę i rysy — dlatego robi się z niego również blaty. Więcej o samym kamieniu i blatach znajdziesz w naszej sekcji [Kamień naturalny i blaty](/blog/kamien-naturalny/).
+Materiałowo najczęściej trafisz na dwie rzeczy: **gres porcelanowy** i **spiek kwarcowy**. Gres jest tańszy, uniwersalny, świetnie imituje marmur czy beton. Spiek jest twardszy, cieńszy, znosi wysoką temperaturę i rysy — dlatego robi się z niego również blaty. Różnice między nimi rozłożyliśmy w osobnym [porównaniu gres vs spiek](/blog/plytki/gres-czy-spiek-kwarcowy/), a więcej o samym kamieniu i blatach znajdziesz w sekcji [Kamień naturalny i blaty](/blog/kamien-naturalny/).
 
 ## Rozmiar: im większy, tym mniej fug — i tym trudniej
 
