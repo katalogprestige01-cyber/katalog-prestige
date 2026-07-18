@@ -4,8 +4,8 @@ description: "Gres jest tańszy i uniwersalny, spiek twardszy i cieńszy. Sprawd
 pubDate: 2026-07-15
 category: "plytki"
 tags: ["salon", "kuchnia", "nowoczesny"]
-author: "default"
-draft: true
+author: "Ewa Sadowska"
+draft: false
 ---
 
 Stoisz w salonie z płytkami, doradca rzuca „to spiek", a Ty kiwasz głową, choć w środku pytanie brzmi: czym to się właściwie różni od zwykłego gresu? Spokojnie — to jedno z najczęstszych zawahań przy wykończeniu, i wcale nie jesteś w nim sam.
