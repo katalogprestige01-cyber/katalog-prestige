@@ -73,6 +73,15 @@ const allSchema = [websiteSchema, orgSchema, ...jsonLd];
     {allSchema.map((s) => (
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
+
+    <!-- Google Analytics 4 (gtag.js) -->
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-CLT41CQCBP"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CLT41CQCBP');
+    </script>
   </head>
   <body>
     <Header />
