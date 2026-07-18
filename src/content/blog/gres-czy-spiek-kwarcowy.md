@@ -19,7 +19,7 @@ Oba materiały wyglądają podobnie, oba imitują marmur czy beton do złudzenia
 
 Gres porcelanowy powstaje z prasowanej i wypalanej gliny — twardy, nasiąkliwość bliska zeru, klasyka na podłogę i ścianę. Spiek kwarcowy (nazywany też wielkoformatowym gresem technicznym) to materiał spiekany w wyższych temperaturach, z dużym udziałem kwarcu. Efekt? Jest twardszy, bardziej odporny na temperaturę i można go produkować w wielkich, cienkich taflach.
 
-Sedno w tym, że spiek to trochę „gres na sterydach" — lepsze parametry, ale i wyższa cena oraz większe wymagania przy cięciu i montażu.
+Sedno w tym, że spiek to trochę „gres na sterydach" — lepsze parametry, ale i wyższa cena oraz większe wymagania przy cięciu i montażu. Jego mocne i słabe strony rozłożyłam osobno w tekście [spiek kwarcowy: wady i zalety](/blog/plytki/spiek-kwarcowy-wady-i-zalety/).
 
 ## Gdzie który się sprawdza
 
