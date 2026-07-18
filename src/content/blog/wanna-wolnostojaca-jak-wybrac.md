@@ -32,8 +32,6 @@ Ciężkie wanny kamienne potrafią ważyć swoje — przy dużym metrażu i peł
 
 To najczęstsza pułapka: ludzie wybierają wannę, a zapominają, że instalację trzeba zaplanować pod nią zawczasu. Odpływ w podłodze musi trafić dokładnie tam, gdzie stanie wanna. Bateria? Albo wolnostojąca (z podłogi, obok wanny — bardzo efektowna), albo podtynkowa w ścianie. Obie decyzje zapadają na etapie surowej łazienki, nie po położeniu płytek.
 
-O samym wyborze baterii pisałem w tekście [bateria podtynkowa czy natynkowa](/blog/armatura-i-ceramika/bateria-podtynkowa-czy-natynkowa/).
-
 ## Mój trik na dobry wybór
 
 Zanim kupisz, wejdź do wanny w salonie (serio, poproś). Sprawdź długość — czy podeprzesz plecy i wyciągniesz nogi. Piękna wanna, w której nie da się wygodnie leżeć, to najdroższa dekoracja świata.
