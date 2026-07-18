@@ -36,23 +36,12 @@ const articleSchema = {
   },
   mainEntityOfPage: { '@type': 'WebPage', '@id': absUrl(path) },
 };
-
-// Okruszki nawigacji jako dane strukturalne — to samo, co widać wizualnie, ale czytelne dla Google.
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: crumbs.map((c, i) => ({
-    '@type': 'ListItem',
-    position: i + 1,
-    name: c.name,
-    item: absUrl(c.href ?? path),
-  })),
-};
+// BreadcrumbList emituje już komponent <Breadcrumbs /> — nie dublujemy go tutaj.
 
 const fmt = (dt) => new Intl.DateTimeFormat('pl-PL', { dateStyle: 'long' }).format(dt);
 ---
 <BaseLayout title={d.title} description={d.description} path={path}
-  image={d.image} ogType="article" jsonLd={[articleSchema, breadcrumbSchema]}>
+  image={d.image} ogType="article" jsonLd={[articleSchema]}>
   <section class="article-hero">
     <div class="bg" style={`background-image:url('${heroImg}')`}></div>
     <div class="scrim"></div>
