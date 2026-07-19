@@ -1,6 +1,6 @@
 ---
 title: "Klasy płytek: ścieralność PEI, antypoślizg R9–R13, nasiąkliwość"
-description: "Praktyczny przewodnik po klasach płytek: ścieralność PEI (0–V), antypoślizgowość R9–R13 i A/B/C oraz grupy nasiąkliwości wg PN-EN 14411. Co oznaczają i gdzie stosować."
+description: "Przewodnik po klasach płytek: ścieralność PEI (0–V), antypoślizg R9–R13 i A/B/C oraz nasiąkliwość wg PN-EN 14411 — co oznaczają i gdzie je stosować."
 pubDate: 2026-07-19
 category: "plytki"
 tags: ["salon", "lazienka", "nowoczesny"]
