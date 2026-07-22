@@ -5,7 +5,7 @@ pubDate: 2026-07-17
 category: "plytki"
 tags: ["lazienka", "salon", "glamour"]
 author: "default"
-draft: true
+draft: false
 ---
 
 Marmur kusi, ale prawdziwy potrafi spędzić sen z powiek: plami się, rysuje, kosztuje. Nic dziwnego, że płytki imitujące marmur to dziś jeden z najczęściej wybieranych dekorów. Wyglądają jak kamień, a zachowują się jak gres — czyli grzeczniej.
